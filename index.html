@@ -11,15 +11,12 @@
       --azul:#1a56db; --azul-h:#1440b0; --azul-claro:#e8f0fe; --azul-claro2:#dbeafe;
       --verde:#057a55; --verde-claro:#def7ec;
       --amarelo:#b45309; --amarelo-claro:#fef3c7;
-      --vermelho:#dc2626; --vermelho-claro:#fee2e2;
       --cinza:#6b7280; --borda:#e5e7eb; --borda2:#d1d5db;
       --bg:#f3f4f6; --card:#ffffff; --texto:#111827; --texto2:#374151; --texto-suave:#6b7280;
       --radius:12px; --shadow:0 1px 4px rgba(0,0,0,.08);
     }
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--texto);font-size:14px;min-height:100vh}
-
-    /* HEADER */
     .header{background:linear-gradient(135deg,#1a56db,#1e3a8a);color:#fff;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(26,86,219,.35);position:sticky;top:0;z-index:50}
     .header-left{display:flex;align-items:center;gap:12px}
     .header-icon{width:36px;height:36px;background:rgba(255,255,255,.18);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px}
@@ -29,26 +26,18 @@
     .badge-time{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:3px 11px;font-size:11px;font-weight:600;font-family:'DM Mono',monospace}
     .btn-refresh{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:8px;padding:5px 12px;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600}
     .btn-refresh:hover{background:rgba(255,255,255,.25)}
-
-    /* NAV TABS */
-    .nav{background:#fff;border-bottom:1px solid var(--borda);padding:0 24px;display:flex;gap:0}
+    .nav{background:#fff;border-bottom:1px solid var(--borda);padding:0 24px;display:flex}
     .nav-tab{padding:13px 18px;font-size:13px;font-weight:600;color:var(--cinza);cursor:pointer;border-bottom:2px solid transparent;transition:.15s;white-space:nowrap;user-select:none}
     .nav-tab:hover{color:var(--azul)}
     .nav-tab.active{color:var(--azul);border-bottom-color:var(--azul)}
-
-    /* TOOLBAR */
     .toolbar{background:#fff;border-bottom:1px solid var(--borda);padding:9px 24px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
     .toolbar-label{font-size:11px;font-weight:700;color:var(--cinza);text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
     .comp-btn{padding:5px 13px;border-radius:20px;border:1px solid var(--borda2);background:#fff;font-size:12px;font-weight:600;color:var(--texto2);cursor:pointer;transition:.15s;font-family:'DM Sans',sans-serif}
     .comp-btn:hover{border-color:var(--azul);color:var(--azul)}
     .comp-btn.active{background:var(--azul);color:#fff;border-color:var(--azul)}
-
-    /* LAYOUT */
     .main{padding:20px 24px;max-width:1440px;margin:0 auto}
     .sec{font-size:11px;font-weight:700;color:var(--cinza);text-transform:uppercase;letter-spacing:.6px;margin:20px 0 10px}
     .sec:first-child{margin-top:0}
-
-    /* KPIs */
     .kpi-grid{display:grid;gap:12px}
     .kpi-4{grid-template-columns:repeat(4,1fr)}
     .kpi-3{grid-template-columns:repeat(3,1fr)}
@@ -61,19 +50,15 @@
     .kpi-amber .kpi-val{color:var(--amarelo)}
     .pill{display:inline-flex;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700}
     .pill-amber{background:var(--amarelo-claro);color:var(--amarelo)}
-
-    /* CHARTS */
     .charts-row{display:grid;grid-template-columns:1.4fr 1fr;gap:12px}
     .chart-card{background:var(--card);border:1px solid var(--borda);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
     .card-hdr{margin-bottom:14px}
     .card-title{font-size:13px;font-weight:700}
     .card-sub{font-size:11px;color:var(--texto-suave);margin-top:2px}
     .chart-wrap{position:relative;height:210px}
-
-    /* TABLE CARD */
     .table-card{background:var(--card);border:1px solid var(--borda);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
     .table-hdr{padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--borda);flex-wrap:wrap}
-    .search-box{display:flex;align-items:center;gap:6px;background:var(--bg);border:1px solid var(--borda2);border-radius:8px;padding:6px 12px;font-size:13px;min-width:240px}
+    .search-box{display:flex;align-items:center;gap:6px;background:var(--bg);border:1px solid var(--borda2);border-radius:8px;padding:6px 12px;min-width:220px}
     .search-box input{border:none;background:none;outline:none;font-size:13px;width:100%;font-family:'DM Sans',sans-serif}
     table{width:100%;border-collapse:collapse}
     th{background:var(--bg);font-size:11px;font-weight:700;color:var(--cinza);text-transform:uppercase;letter-spacing:.4px;padding:9px 14px;text-align:left;border-bottom:1px solid var(--borda);white-space:nowrap}
@@ -86,35 +71,23 @@
     .pager-btn:hover:not(:disabled){background:var(--azul-claro)}
     .pager-btn.active{background:var(--azul);color:#fff;border-color:var(--azul)}
     .pager-btn:disabled{opacity:.35;cursor:default}
-
-    /* BADGES */
     .badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700}
     .badge-sn{background:#dbeafe;color:#1d4ed8}.badge-lp{background:#d1fae5;color:#065f46}
     .badge-lr{background:#fef3c7;color:#92400e}.badge-mei{background:#ede9fe;color:#5b21b6}
     .badge-dm{background:#fce7f3;color:#9d174d}.badge-ev{background:#f3f4f6;color:#374151}
     .sbadge{display:inline-flex;align-items:center;padding:3px 9px;border-radius:10px;font-size:11px;font-weight:700}
-    .s-pendente{background:#fef3c7;color:#92400e}
-    .s-entregue{background:#d1fae5;color:#065f46}
-    .s-sem_movimento{background:#f3f4f6;color:#374151}
-    .s-vencida{background:#fee2e2;color:#991b1b}
-    .s-dispensada{background:#e0e7ff;color:#3730a3}
-    .s-nao_aplicavel{background:#f3f4f6;color:#6b7280}
+    .s-pendente{background:#fef3c7;color:#92400e}.s-entregue{background:#d1fae5;color:#065f46}
+    .s-sem_movimento{background:#f3f4f6;color:#374151}.s-vencida{background:#fee2e2;color:#991b1b}
+    .s-dispensada{background:#e0e7ff;color:#3730a3}.s-nao_aplicavel{background:#f3f4f6;color:#6b7280}
     .s-vencendo_hoje{background:#ffedd5;color:#c2410c}
-    .sf-pendente{background:#fef3c7;color:#92400e}
-    .sf-pago{background:#d1fae5;color:#065f46}
+    .sf-pendente{background:#fef3c7;color:#92400e}.sf-pago{background:#d1fae5;color:#065f46}
     .sf-cancelado{background:#fee2e2;color:#991b1b}
-
-    /* PROGRESS */
     .prog{display:flex;align-items:center;gap:6px}
     .prog-bg{flex:1;height:5px;background:var(--borda);border-radius:3px;overflow:hidden;min-width:50px}
     .prog-fill{height:100%;border-radius:3px;background:var(--verde)}
     .prog-txt{font-size:11px;font-weight:700;color:var(--cinza);width:32px;text-align:right}
-
-    /* EDIT BUTTON */
-    .btn-edit{background:var(--azul-claro);color:var(--azul);border:none;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;transition:.1s;font-family:'DM Sans',sans-serif}
+    .btn-edit{background:var(--azul-claro);color:var(--azul);border:none;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif}
     .btn-edit:hover{background:var(--azul-claro2)}
-
-    /* MODAL */
     .overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;display:flex;align-items:center;justify-content:center;padding:16px}
     .overlay.hidden{display:none}
     .modal{background:#fff;border-radius:16px;padding:28px;width:460px;max-width:100%;box-shadow:0 24px 60px rgba(0,0,0,.2);animation:mIn .18s ease}
@@ -129,20 +102,15 @@
     .btn{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;transition:.15s}
     .btn-primary{background:var(--azul);color:#fff}.btn-primary:hover{background:var(--azul-h)}
     .btn-ghost{background:#fff;color:var(--texto2);border:1px solid var(--borda2)}.btn-ghost:hover{background:var(--bg)}
-
-    /* LOADING / ERRO */
     .loading{display:flex;flex-direction:column;align-items:center;justify-content:center;height:280px;gap:14px;color:var(--cinza)}
     .spinner{width:36px;height:36px;border:3px solid var(--borda);border-top-color:var(--azul);border-radius:50%;animation:spin .7s linear infinite}
     @keyframes spin{to{transform:rotate(360deg)}}
     .err-box{background:#fde8e8;border:1px solid #fca5a5;border-radius:10px;padding:18px;margin:16px 0;font-size:13px;color:#c81e1e}
     .empty{text-align:center;padding:40px;color:var(--cinza);font-size:13px}
-
-    /* TOAST */
     .toast-wrap{position:fixed;bottom:24px;right:24px;z-index:999;display:flex;flex-direction:column;gap:8px}
-    .toast{background:#1f2937;color:#fff;padding:12px 18px;border-radius:10px;font-size:13px;font-weight:600;animation:tIn .2s ease;box-shadow:0 8px 24px rgba(0,0,0,.25);max-width:320px}
+    .toast{background:#1f2937;color:#fff;padding:12px 18px;border-radius:10px;font-size:13px;font-weight:600;animation:tIn .2s ease;box-shadow:0 8px 24px rgba(0,0,0,.25)}
     .toast.ok{background:#057a55}.toast.err{background:#dc2626}
     @keyframes tIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-
     @media(max-width:900px){.kpi-4{grid-template-columns:repeat(2,1fr)}.charts-row{grid-template-columns:1fr}}
     @media(max-width:600px){.kpi-4,.kpi-3{grid-template-columns:1fr}.main{padding:12px 14px}.toolbar{padding:8px 14px}.nav{padding:0 14px}}
   </style>
@@ -159,14 +127,14 @@
   </div>
   <div class="header-right">
     <span class="badge-time" id="lastUpdate">--:--</span>
-    <button class="btn-refresh" onclick="refresh()">⟳ Atualizar</button>
+    <button class="btn-refresh" id="btnRefresh">⟳ Atualizar</button>
   </div>
 </div>
 
 <div class="nav">
-  <div class="nav-tab active" onclick="showTab('dashboard')">📊 Dashboard</div>
-  <div class="nav-tab" onclick="showTab('entregas')">📋 Entregas</div>
-  <div class="nav-tab" onclick="showTab('financeiro')">💳 Financeiro</div>
+  <div class="nav-tab active" id="tab-dashboard">📊 Dashboard</div>
+  <div class="nav-tab" id="tab-entregas">📋 Entregas</div>
+  <div class="nav-tab" id="tab-financeiro">💳 Financeiro</div>
 </div>
 
 <div class="toolbar">
@@ -183,7 +151,6 @@
   <div class="modal">
     <div class="modal-title">✏️ Editar Entrega</div>
     <div class="modal-sub" id="mEntSub"></div>
-    <input type="hidden" id="mEntId">
     <div class="form-row">
       <label class="form-lbl">Status</label>
       <select class="form-ctrl" id="mEntStatus">
@@ -208,8 +175,8 @@
       <textarea class="form-ctrl" id="mEntObs" rows="2" style="resize:vertical"></textarea>
     </div>
     <div class="modal-footer">
-      <button class="btn btn-ghost" onclick="closeModal('modalEntrega')">Cancelar</button>
-      <button class="btn btn-primary" onclick="salvarEntrega()">💾 Salvar</button>
+      <button class="btn btn-ghost" id="btnEntCancel">Cancelar</button>
+      <button class="btn btn-primary" id="btnEntSalvar">💾 Salvar</button>
     </div>
   </div>
 </div>
@@ -219,7 +186,6 @@
   <div class="modal">
     <div class="modal-title">💳 Editar Honorário</div>
     <div class="modal-sub" id="mFinSub"></div>
-    <input type="hidden" id="mFinId">
     <div class="form-row">
       <label class="form-lbl">Status</label>
       <select class="form-ctrl" id="mFinStatus">
@@ -241,8 +207,8 @@
       <textarea class="form-ctrl" id="mFinObs" rows="2" style="resize:vertical"></textarea>
     </div>
     <div class="modal-footer">
-      <button class="btn btn-ghost" onclick="closeModal('modalFin')">Cancelar</button>
-      <button class="btn btn-primary" onclick="salvarFin()">💾 Salvar</button>
+      <button class="btn btn-ghost" id="btnFinCancel">Cancelar</button>
+      <button class="btn btn-primary" id="btnFinSalvar">💾 Salvar</button>
     </div>
   </div>
 </div>
@@ -250,62 +216,135 @@
 <div class="toast-wrap" id="toastWrap"></div>
 
 <script>
-const SB = "https://mpbhuoolbkzwfpynrnbg.supabase.co";
+// ── Supabase ──────────────────────────────────────────────────────────────
+const SB  = "https://mpbhuoolbkzwfpynrnbg.supabase.co";
 const KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1wYmh1b29sYmt6d2ZweW5ybmJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYyMDcxMzgsImV4cCI6MjA5MTc4MzEzOH0.VoVCzcrOG6ptN96iREPdcZjR_C_gOXzHx80cIpOPk90";
-const H = { "apikey":KEY, "Authorization":`Bearer ${KEY}`, "Content-Type":"application/json", "Accept":"application/json" };
+const H   = {"apikey":KEY,"Authorization":"Bearer "+KEY,"Content-Type":"application/json","Accept":"application/json"};
 
-async function GET(view, q="") {
-  const r = await fetch(`${SB}/rest/v1/${view}?${q}`, { headers: H });
-  if (!r.ok) throw new Error(`[${view}] ${r.status}: ${await r.text()}`);
+async function GET(view, q) {
+  q = q || "";
+  var r = await fetch(SB+"/rest/v1/"+view+"?"+q, {headers:H});
+  if (!r.ok) throw new Error("["+view+"] "+r.status+": "+(await r.text()));
   return r.json();
 }
 async function PATCH(table, id, body) {
-  const r = await fetch(`${SB}/rest/v1/${table}?id=eq.${id}`, {
-    method:"PATCH", headers:{...H,"Prefer":"return=minimal"}, body:JSON.stringify(body)
+  var r = await fetch(SB+"/rest/v1/"+table+"?id=eq."+id, {
+    method:"PATCH", headers:Object.assign({},H,{"Prefer":"return=minimal"}),
+    body:JSON.stringify(body)
   });
   if (!r.ok) throw new Error(await r.text());
 }
 
 // ── Estado ────────────────────────────────────────────────────────────────
-const S = {
+var S = {
   competencias:[], compAtiva:null, tab:"dashboard",
   clientes:[], entregas:[], financeiro:[],
   dashComp:[], dashObrig:[],
   entQ:"", entPg:1, finQ:"", finPg:1,
-  charts:{}
+  charts:{},
+  editEntId:null, editFinId:null
 };
-const PER = 15;
+var PER = 15;
 
-// ── Init ──────────────────────────────────────────────────────────────────
+// ── Helpers ───────────────────────────────────────────────────────────────
+function fmt(n)  { return Number(n||0).toLocaleString("pt-BR"); }
+function R(n)    { return Number(n||0).toLocaleString("pt-BR",{style:"currency",currency:"BRL"}); }
+function D(d)    { try { return new Date(d.length===10?d+"T12:00:00":d).toLocaleDateString("pt-BR"); } catch(e) { return d||"–"; } }
+function esc(s)  { return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+function rtB(rt) {
+  var m = {SN:"badge-sn",LP:"badge-lp",LR:"badge-lr",MEI:"badge-mei",DM:"badge-dm",EV:"badge-ev"};
+  var cls = m[rt] || "badge-ev";
+  return '<span class="badge '+cls+'">'+(rt||"–")+'</span>';
+}
+function lbS(s) {
+  return {pendente:"Pendente",entregue:"Entregue",sem_movimento:"Sem Mov.",vencida:"Vencida",
+    dispensada:"Dispensada",nao_aplicavel:"N/A",vencendo_hoje:"Vencendo hoje"}[s] || s;
+}
+function lbF(s) { return {pendente:"Pendente",pago:"Pago",cancelado:"Cancelado"}[s]||s; }
+
+function set(html) { document.getElementById("mainContent").innerHTML = html; }
+function showLoading() { set('<div class="loading"><div class="spinner"></div><div>Carregando…</div></div>'); }
+function showErr(msg) { set('<div class="err-box"><strong>⚠️ Erro:</strong> '+esc(msg)+'</div>'); }
+
+function toast(msg, type) {
+  var w = document.getElementById("toastWrap");
+  var t = document.createElement("div");
+  t.className = "toast "+(type||"ok");
+  t.textContent = msg;
+  w.appendChild(t);
+  setTimeout(function(){ t.remove(); }, 3200);
+}
+
+function destroyCharts() {
+  Object.keys(S.charts).forEach(function(k){ try{ S.charts[k].destroy(); }catch(e){} });
+  S.charts = {};
+}
+
+// ── Init / Load ───────────────────────────────────────────────────────────
 async function init() {
+  // Eventos fixos (não inline)
+  document.getElementById("btnRefresh").addEventListener("click", load);
+  document.getElementById("tab-dashboard").addEventListener("click",  function(){ showTab("dashboard"); });
+  document.getElementById("tab-entregas").addEventListener("click",   function(){ showTab("entregas"); });
+  document.getElementById("tab-financeiro").addEventListener("click", function(){ showTab("financeiro"); });
+  document.getElementById("btnEntCancel").addEventListener("click",  function(){ closeModal("modalEntrega"); });
+  document.getElementById("btnEntSalvar").addEventListener("click",  salvarEntrega);
+  document.getElementById("btnFinCancel").addEventListener("click",  function(){ closeModal("modalFin"); });
+  document.getElementById("btnFinSalvar").addEventListener("click",  salvarFin);
+  document.getElementById("modalEntrega").addEventListener("click",  function(e){ if(e.target===this) closeModal("modalEntrega"); });
+  document.getElementById("modalFin").addEventListener("click",      function(e){ if(e.target===this) closeModal("modalFin"); });
+
   try {
     S.competencias = await GET("competencias","order=ano.asc,mes.asc");
-    // Botões de competência
-    document.getElementById("compBtns").innerHTML =
-      S.competencias.map(c=>`<button class="comp-btn" data-id="${c.id}" onclick="selComp('${c.id}')">${c.referencia}</button>`).join("");
-    S.compAtiva = S.competencias.at(-1)?.id || null;
+    buildCompBtns();
+    S.compAtiva = S.competencias.length ? S.competencias[S.competencias.length-1].id : null;
     markComp();
     await load();
   } catch(e) { showErr(e.message); }
 }
 
-function markComp() {
-  document.querySelectorAll(".comp-btn").forEach(b=>b.classList.toggle("active", b.dataset.id===S.compAtiva));
+function buildCompBtns() {
+  var wrap = document.getElementById("compBtns");
+  wrap.innerHTML = "";
+  S.competencias.forEach(function(c) {
+    var b = document.createElement("button");
+    b.className = "comp-btn";
+    b.textContent = c.referencia;
+    b.dataset.id = c.id;
+    b.addEventListener("click", function(){ selComp(c.id); });
+    wrap.appendChild(b);
+  });
 }
-async function selComp(id) { S.compAtiva=id; S.entPg=1; S.finPg=1; markComp(); await load(); }
-async function refresh() { await load(); }
+
+function markComp() {
+  document.querySelectorAll(".comp-btn").forEach(function(b){
+    b.classList.toggle("active", b.dataset.id === S.compAtiva);
+  });
+}
+
+async function selComp(id) {
+  S.compAtiva = id; S.entPg = 1; S.finPg = 1;
+  markComp();
+  await load();
+}
 
 async function load() {
   showLoading();
   try {
-    const cid = S.compAtiva;
-    [S.clientes, S.entregas, S.financeiro, S.dashComp, S.dashObrig] = await Promise.all([
-      GET("vw_dashboard_clientes","order=razao_social.asc"),
-      GET("vw_entregas_detalhe",`competencia_id=eq.${cid}&order=razao_social.asc`),
-      GET("vw_financeiro_detalhe",`competencia_id=eq.${cid}&order=razao_social.asc`),
+    var cid = S.compAtiva;
+    var results = await Promise.all([
+      GET("vw_dashboard_clientes",    "order=razao_social.asc"),
+      GET("vw_entregas_detalhe",      "competencia_id=eq."+cid+"&order=razao_social.asc"),
+      GET("vw_financeiro_detalhe",    "competencia_id=eq."+cid+"&order=razao_social.asc"),
       GET("vw_dashboard_competencias","order=ano.asc,mes.asc"),
-      GET("vw_dashboard_obrigacoes","order=pendentes.desc")
+      GET("vw_dashboard_obrigacoes",  "order=pendentes.desc")
     ]);
+    S.clientes   = results[0];
+    S.entregas   = results[1];
+    S.financeiro = results[2];
+    S.dashComp   = results[3];
+    S.dashObrig  = results[4];
     document.getElementById("lastUpdate").textContent =
       new Date().toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"});
     renderTab();
@@ -315,259 +354,325 @@ async function load() {
 // ── Tabs ──────────────────────────────────────────────────────────────────
 function showTab(tab) {
   S.tab = tab;
-  document.querySelectorAll(".nav-tab").forEach((t,i)=>
-    t.classList.toggle("active",["dashboard","entregas","financeiro"][i]===tab));
+  ["dashboard","entregas","financeiro"].forEach(function(t){
+    document.getElementById("tab-"+t).classList.toggle("active", t===tab);
+  });
   renderTab();
 }
 function renderTab() {
   destroyCharts();
-  if(S.tab==="dashboard")  renderDash();
-  if(S.tab==="entregas")   renderEnt();
-  if(S.tab==="financeiro") renderFin();
+  if (S.tab==="dashboard")  renderDash();
+  if (S.tab==="entregas")   renderEnt();
+  if (S.tab==="financeiro") renderFin();
 }
 
 // ── DASHBOARD ─────────────────────────────────────────────────────────────
 function renderDash() {
-  const ativos = S.clientes.filter(c=>c.status==="ativo");
-  const ult = S.dashComp.at(-1)||{};
-  const ent=+( ult.entregues||0), pen=+(ult.pendentes||0), sem=+(ult.sem_movimento||0), tot=+(ult.total||0);
-  const comMov=tot-sem, taxa=comMov>0?Math.round(ent/comMov*100):0;
-  const vPago=S.financeiro.filter(f=>f.status==="pago").reduce((s,f)=>s++(f.valor||0),0);
-  const vPend=S.financeiro.filter(f=>f.status==="pendente").reduce((s,f)=>s++(f.valor||0),0);
-  const ref = S.competencias.find(c=>c.id===S.compAtiva)?.referencia||"–";
-
-  set(`
-    <div class="sec">📌 Visão Geral · ${ref}</div>
-    <div class="kpi-grid kpi-4">
-      <div class="kpi-card kpi-blue">
-        <div class="kpi-lbl">🏢 Clientes Ativos</div><div class="kpi-val">${ativos.length}</div>
-        <div class="kpi-foot">${ativos.filter(c=>c.rt==="SN").length} SN · ${ativos.filter(c=>c.rt==="LP").length} LP · ${ativos.filter(c=>c.rt==="LR"||c.rt==="EV").length} LR · ${ativos.filter(c=>c.rt==="MEI").length} MEI</div>
-      </div>
-      <div class="kpi-card kpi-amber">
-        <div class="kpi-lbl">⏳ Pendentes</div><div class="kpi-val">${fmt(pen)}</div>
-        <div class="kpi-foot">de ${fmt(comMov)} com movimento</div>
-      </div>
-      <div class="kpi-card kpi-green">
-        <div class="kpi-lbl">✅ Taxa de Entrega</div><div class="kpi-val">${taxa}%</div>
-        <div class="kpi-foot">${fmt(ent)} entregues · ${fmt(sem)} sem mov.</div>
-      </div>
-      <div class="kpi-card kpi-blue">
-        <div class="kpi-lbl">💰 Honorários Pagos</div>
-        <div class="kpi-val" style="font-size:22px">${R(vPago)}</div>
-        <div class="kpi-foot"><span class="pill pill-amber">${R(vPend)} pendente</span></div>
-      </div>
-    </div>
-
-    <div class="sec" style="margin-top:20px">📅 Por Competência (histórico completo)</div>
-    <div class="charts-row">
-      <div class="chart-card"><div class="card-hdr"><div class="card-title">Entregas por Competência</div><div class="card-sub">Entregues · Pendentes · Sem movimento</div></div><div class="chart-wrap"><canvas id="cComp"></canvas></div></div>
-      <div class="chart-card"><div class="card-hdr"><div class="card-title">Pendências por Obrigação</div><div class="card-sub">Top 8 · Em aberto vs. entregues</div></div><div class="chart-wrap"><canvas id="cObrig"></canvas></div></div>
-    </div>
-
-    <div class="sec" style="margin-top:20px">👥 Clientes · ${ref}</div>
-    <div class="table-card">
-      <div class="table-hdr"><span class="card-title">Painel de Clientes</span></div>
-      <table><thead><tr><th>Cliente</th><th>RT</th><th>Obrig.</th><th>✅</th><th>⏳</th><th>Progresso</th></tr></thead>
-      <tbody>${ativos.map(c=>{
-        const e2=+(c.entregues||0),p2=+(c.pendentes||0),mv=e2+p2,pct=mv>0?Math.round(e2/mv*100):100;
-        return`<tr><td style="font-weight:600">${c.razao_social}</td><td>${rtB(c.rt)}</td><td>${c.qtd_obrigacoes}</td><td>${e2}</td><td>${p2}</td>
-          <td><div class="prog"><div class="prog-bg"><div class="prog-fill" style="width:${pct}%"></div></div><span class="prog-txt">${pct}%</span></div></td></tr>`;
-      }).join("")}</tbody></table>
-    </div>
-  `);
-
-  // Charts
-  S.charts.comp = new Chart(document.getElementById("cComp"),{type:"bar",
-    data:{labels:S.dashComp.map(c=>c.referencia),datasets:[
-      {label:"Entregues",    data:S.dashComp.map(c=>+(c.entregues||0)),    backgroundColor:"#057a55",borderRadius:4,borderSkipped:false},
-      {label:"Pendentes",    data:S.dashComp.map(c=>+(c.pendentes||0)),    backgroundColor:"#faca15",borderRadius:4,borderSkipped:false},
-      {label:"Sem Movimento",data:S.dashComp.map(c=>+(c.sem_movimento||0)),backgroundColor:"#d1d5db",borderRadius:4,borderSkipped:false}
-    ]},options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{labels:{font:{size:11},boxWidth:10}}},
-      scales:{x:{stacked:true,grid:{display:false},ticks:{font:{size:11}}},y:{stacked:true,grid:{color:"#f3f4f6"},ticks:{font:{size:11}}}}}
+  var ativos = S.clientes.filter(function(c){ return c.status==="ativo"; });
+  var ult    = S.dashComp.length ? S.dashComp[S.dashComp.length-1] : {};
+  var ent    = Number(ult.entregues||0);
+  var pen    = Number(ult.pendentes||0);
+  var sem    = Number(ult.sem_movimento||0);
+  var tot    = Number(ult.total||0);
+  var comMov = tot - sem;
+  var taxa   = comMov > 0 ? Math.round(ent/comMov*100) : 0;
+  var vPago  = 0, vPend = 0;
+  S.financeiro.forEach(function(f){
+    if (f.status==="pago")     vPago += Number(f.valor||0);
+    if (f.status==="pendente") vPend += Number(f.valor||0);
   });
-  const top8=S.dashObrig.filter(o=>+(o.pendentes||0)>0||+(o.entregues||0)>0).slice(0,8);
-  S.charts.obrig = new Chart(document.getElementById("cObrig"),{type:"bar",
-    data:{labels:top8.map(o=>o.codigo),datasets:[
-      {label:"Pendentes",data:top8.map(o=>+(o.pendentes||0)),backgroundColor:"#faca15",borderRadius:4},
-      {label:"Entregues",data:top8.map(o=>+(o.entregues||0)),backgroundColor:"#057a55",borderRadius:4}
-    ]},options:{indexAxis:"y",responsive:true,maintainAspectRatio:false,
+  var ref = "";
+  S.competencias.forEach(function(c){ if(c.id===S.compAtiva) ref=c.referencia; });
+
+  var snC=0,lpC=0,lrC=0,meiC=0;
+  ativos.forEach(function(c){
+    if(c.rt==="SN") snC++;
+    if(c.rt==="LP") lpC++;
+    if(c.rt==="LR"||c.rt==="EV") lrC++;
+    if(c.rt==="MEI") meiC++;
+  });
+
+  var rows = ativos.map(function(c){
+    var e2=Number(c.entregues||0), p2=Number(c.pendentes||0), mv=e2+p2;
+    var pct = mv>0 ? Math.round(e2/mv*100) : 100;
+    return '<tr><td style="font-weight:600">'+esc(c.razao_social)+'</td><td>'+rtB(c.rt)+'</td>'+
+      '<td>'+c.qtd_obrigacoes+'</td><td>'+e2+'</td><td>'+p2+'</td>'+
+      '<td><div class="prog"><div class="prog-bg"><div class="prog-fill" style="width:'+pct+'%"></div></div>'+
+      '<span class="prog-txt">'+pct+'%</span></div></td></tr>';
+  }).join("");
+
+  set(
+    '<div class="sec">📌 Visão Geral · '+esc(ref)+'</div>'+
+    '<div class="kpi-grid kpi-4">'+
+      '<div class="kpi-card kpi-blue"><div class="kpi-lbl">🏢 Clientes Ativos</div>'+
+        '<div class="kpi-val">'+ativos.length+'</div>'+
+        '<div class="kpi-foot">'+snC+' SN · '+lpC+' LP · '+lrC+' LR · '+meiC+' MEI</div></div>'+
+      '<div class="kpi-card kpi-amber"><div class="kpi-lbl">⏳ Pendentes</div>'+
+        '<div class="kpi-val">'+fmt(pen)+'</div>'+
+        '<div class="kpi-foot">de '+fmt(comMov)+' com movimento</div></div>'+
+      '<div class="kpi-card kpi-green"><div class="kpi-lbl">✅ Taxa de Entrega</div>'+
+        '<div class="kpi-val">'+taxa+'%</div>'+
+        '<div class="kpi-foot">'+fmt(ent)+' entregues · '+fmt(sem)+' sem mov.</div></div>'+
+      '<div class="kpi-card kpi-blue"><div class="kpi-lbl">💰 Honorários Pagos</div>'+
+        '<div class="kpi-val" style="font-size:22px">'+R(vPago)+'</div>'+
+        '<div class="kpi-foot"><span class="pill pill-amber">'+R(vPend)+' pendente</span></div></div>'+
+    '</div>'+
+    '<div class="sec" style="margin-top:20px">📅 Por Competência</div>'+
+    '<div class="charts-row">'+
+      '<div class="chart-card"><div class="card-hdr"><div class="card-title">Entregas por Competência</div>'+
+        '<div class="card-sub">Entregues · Pendentes · Sem movimento</div></div>'+
+        '<div class="chart-wrap"><canvas id="cComp"></canvas></div></div>'+
+      '<div class="chart-card"><div class="card-hdr"><div class="card-title">Pendências por Obrigação</div>'+
+        '<div class="card-sub">Top 8 · Em aberto vs. entregues</div></div>'+
+        '<div class="chart-wrap"><canvas id="cObrig"></canvas></div></div>'+
+    '</div>'+
+    '<div class="sec" style="margin-top:20px">👥 Clientes · '+esc(ref)+'</div>'+
+    '<div class="table-card"><div class="table-hdr"><span class="card-title">Painel de Clientes</span></div>'+
+      '<table><thead><tr><th>Cliente</th><th>RT</th><th>Obrig.</th><th>✅</th><th>⏳</th><th>Progresso</th></tr></thead>'+
+      '<tbody>'+rows+'</tbody></table></div>'
+  );
+
+  S.charts.comp = new Chart(document.getElementById("cComp"),{
+    type:"bar",
+    data:{labels:S.dashComp.map(function(c){return c.referencia;}),datasets:[
+      {label:"Entregues",    data:S.dashComp.map(function(c){return Number(c.entregues||0);}),    backgroundColor:"#057a55",borderRadius:4,borderSkipped:false},
+      {label:"Pendentes",    data:S.dashComp.map(function(c){return Number(c.pendentes||0);}),    backgroundColor:"#faca15",borderRadius:4,borderSkipped:false},
+      {label:"Sem Movimento",data:S.dashComp.map(function(c){return Number(c.sem_movimento||0);}),backgroundColor:"#d1d5db",borderRadius:4,borderSkipped:false}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
       plugins:{legend:{labels:{font:{size:11},boxWidth:10}}},
-      scales:{x:{stacked:true,grid:{color:"#f3f4f6"},ticks:{font:{size:11}}},y:{stacked:true,grid:{display:false},ticks:{font:{size:11}}}}}
+      scales:{x:{stacked:true,grid:{display:false},ticks:{font:{size:11}}},
+              y:{stacked:true,grid:{color:"#f3f4f6"},ticks:{font:{size:11}}}}}
+  });
+
+  var top8 = S.dashObrig.filter(function(o){return Number(o.pendentes||0)>0||Number(o.entregues||0)>0;}).slice(0,8);
+  S.charts.obrig = new Chart(document.getElementById("cObrig"),{
+    type:"bar",
+    data:{labels:top8.map(function(o){return o.codigo;}),datasets:[
+      {label:"Pendentes",data:top8.map(function(o){return Number(o.pendentes||0);}),backgroundColor:"#faca15",borderRadius:4},
+      {label:"Entregues",data:top8.map(function(o){return Number(o.entregues||0);}),backgroundColor:"#057a55",borderRadius:4}
+    ]},
+    options:{indexAxis:"y",responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{labels:{font:{size:11},boxWidth:10}}},
+      scales:{x:{stacked:true,grid:{color:"#f3f4f6"},ticks:{font:{size:11}}},
+              y:{stacked:true,grid:{display:false},ticks:{font:{size:11}}}}}
   });
 }
 
 // ── ENTREGAS ──────────────────────────────────────────────────────────────
 function renderEnt() {
-  const q=S.entQ.toLowerCase();
-  const rows=S.entregas.filter(e=>!q||e.razao_social.toLowerCase().includes(q)||e.obrigacao_codigo.toLowerCase().includes(q)||e.obrigacao_nome.toLowerCase().includes(q));
-  const pages=Math.max(1,Math.ceil(rows.length/PER));
-  const pg=Math.min(S.entPg,pages);
-  const sl=rows.slice((pg-1)*PER,pg*PER);
-  const ref=S.competencias.find(c=>c.id===S.compAtiva)?.referencia||"–";
-  const tot=S.entregas.length, entg=S.entregas.filter(e=>e.status==="entregue").length;
-  const pend=S.entregas.filter(e=>e.status==="pendente").length, semM=S.entregas.filter(e=>e.status==="sem_movimento").length;
+  var q = S.entQ.toLowerCase();
+  var rows = S.entregas.filter(function(e){
+    return !q || e.razao_social.toLowerCase().indexOf(q)>=0 ||
+           e.obrigacao_codigo.toLowerCase().indexOf(q)>=0 ||
+           e.obrigacao_nome.toLowerCase().indexOf(q)>=0;
+  });
+  var pages = Math.max(1, Math.ceil(rows.length/PER));
+  var pg    = Math.min(S.entPg, pages);
+  var sl    = rows.slice((pg-1)*PER, pg*PER);
+  var ref   = ""; S.competencias.forEach(function(c){if(c.id===S.compAtiva)ref=c.referencia;});
+  var tot=S.entregas.length, entg=0, pend=0, semM=0;
+  S.entregas.forEach(function(e){
+    if(e.status==="entregue")     entg++;
+    if(e.status==="pendente")     pend++;
+    if(e.status==="sem_movimento") semM++;
+  });
 
-  set(`
-    <div class="kpi-grid kpi-4" style="margin-bottom:14px">
-      <div class="kpi-card kpi-blue"><div class="kpi-lbl">Total · ${ref}</div><div class="kpi-val" style="font-size:22px">${tot}</div></div>
-      <div class="kpi-card kpi-green"><div class="kpi-lbl">✅ Entregues</div><div class="kpi-val" style="font-size:22px">${entg}</div></div>
-      <div class="kpi-card kpi-amber"><div class="kpi-lbl">⏳ Pendentes</div><div class="kpi-val" style="font-size:22px">${pend}</div></div>
-      <div class="kpi-card"><div class="kpi-lbl">Sem Movimento</div><div class="kpi-val" style="font-size:22px;color:var(--cinza)">${semM}</div></div>
-    </div>
-    <div class="table-card">
-      <div class="table-hdr">
-        <span class="card-title">📋 Entregas · ${ref} <span style="font-weight:400;color:var(--cinza);font-size:12px">${rows.length} registros</span></span>
-        <div class="search-box">🔍 <input placeholder="Buscar cliente ou obrigação…" value="${escAttr(S.entQ)}" oninput="S.entQ=this.value;S.entPg=1;renderEnt()"></div>
-      </div>
-      <div style="overflow-x:auto">
-      <table><thead><tr><th>Cliente</th><th>RT</th><th>Obrigação</th><th>Vencimento</th><th>Status</th><th>Data Entrega</th><th>Valor</th><th></th></tr></thead>
-      <tbody>${sl.length?sl.map(e=>`<tr>
-        <td style="font-weight:600;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${escAttr(e.razao_social)}">${e.razao_social}</td>
-        <td>${rtB(e.rt)}</td>
-        <td><b style="font-size:12px">${e.obrigacao_codigo}</b> <span style="color:var(--cinza);font-size:11px">${e.obrigacao_nome}</span></td>
-        <td style="font-family:'DM Mono',monospace;font-size:12px">${e.data_vencimento?D(e.data_vencimento):"–"}</td>
-        <td><span class="sbadge s-${e.status}">${lbS(e.status)}</span></td>
-        <td style="font-family:'DM Mono',monospace;font-size:12px">${e.data_entrega?D(e.data_entrega):"–"}</td>
-        <td style="font-family:'DM Mono',monospace;font-size:12px">${e.valor?R(e.valor):"–"}</td>
-        <td><button class="btn-edit" onclick='openEnt(${JSON.stringify(e)})'>✏️</button></td>
-      </tr>`).join(""):`<tr><td colspan="8"><div class="empty">Nenhum registro encontrado</div></td></tr>`}</tbody>
-      </table></div>
-      ${pagerHtml(pg,pages,"S.entPg","renderEnt",rows.length,sl.length)}
-    </div>`);
+  var trs = sl.map(function(e){
+    return '<tr>'+
+      '<td style="font-weight:600;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="'+esc(e.razao_social)+'">'+esc(e.razao_social)+'</td>'+
+      '<td>'+rtB(e.rt)+'</td>'+
+      '<td><b style="font-size:12px">'+esc(e.obrigacao_codigo)+'</b> <span style="color:var(--cinza);font-size:11px">'+esc(e.obrigacao_nome)+'</span></td>'+
+      '<td style="font-family:\'DM Mono\',monospace;font-size:12px">'+(e.data_vencimento?D(e.data_vencimento):"–")+'</td>'+
+      '<td><span class="sbadge s-'+e.status+'">'+lbS(e.status)+'</span></td>'+
+      '<td style="font-family:\'DM Mono\',monospace;font-size:12px">'+(e.data_entrega?D(e.data_entrega):"–")+'</td>'+
+      '<td style="font-family:\'DM Mono\',monospace;font-size:12px">'+(e.valor?R(e.valor):"–")+'</td>'+
+      '<td><button class="btn-edit" data-id="'+e.id+'">✏️</button></td>'+
+    '</tr>';
+  }).join("") || '<tr><td colspan="8"><div class="empty">Nenhum registro encontrado</div></td></tr>';
+
+  set(
+    '<div class="kpi-grid kpi-4" style="margin-bottom:14px">'+
+      '<div class="kpi-card kpi-blue"><div class="kpi-lbl">Total · '+esc(ref)+'</div><div class="kpi-val" style="font-size:22px">'+tot+'</div></div>'+
+      '<div class="kpi-card kpi-green"><div class="kpi-lbl">✅ Entregues</div><div class="kpi-val" style="font-size:22px">'+entg+'</div></div>'+
+      '<div class="kpi-card kpi-amber"><div class="kpi-lbl">⏳ Pendentes</div><div class="kpi-val" style="font-size:22px">'+pend+'</div></div>'+
+      '<div class="kpi-card"><div class="kpi-lbl">Sem Movimento</div><div class="kpi-val" style="font-size:22px;color:var(--cinza)">'+semM+'</div></div>'+
+    '</div>'+
+    '<div class="table-card">'+
+      '<div class="table-hdr">'+
+        '<span class="card-title">📋 Entregas · '+esc(ref)+' <span style="font-weight:400;color:var(--cinza);font-size:12px">'+rows.length+' registros</span></span>'+
+        '<div class="search-box">🔍 <input id="entSearch" placeholder="Buscar cliente ou obrigação…" value="'+esc(S.entQ)+'"></div>'+
+      '</div>'+
+      '<div style="overflow-x:auto">'+
+      '<table><thead><tr><th>Cliente</th><th>RT</th><th>Obrigação</th><th>Vencimento</th><th>Status</th><th>Data Entrega</th><th>Valor</th><th></th></tr></thead>'+
+      '<tbody>'+trs+'</tbody></table></div>'+
+      pagerHtml(pg,pages,rows.length,sl.length,"ent")+
+    '</div>'
+  );
+
+  // busca
+  document.getElementById("entSearch").addEventListener("input", function(){
+    S.entQ = this.value; S.entPg = 1; renderEnt();
+  });
+  // botões editar entrega
+  document.querySelectorAll("#mainContent .btn-edit[data-id]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var id = this.dataset.id;
+      var e = S.entregas.find(function(x){ return x.id===id; });
+      if (e) openEnt(e);
+    });
+  });
+  // paginação
+  document.querySelectorAll(".pg-btn-ent").forEach(function(b){
+    b.addEventListener("click", function(){ S.entPg=Number(this.dataset.pg); renderEnt(); });
+  });
+  document.querySelectorAll(".pg-prev-ent").forEach(function(b){
+    b.addEventListener("click", function(){ S.entPg=Math.max(1,S.entPg-1); renderEnt(); });
+  });
+  document.querySelectorAll(".pg-next-ent").forEach(function(b){
+    b.addEventListener("click", function(){ S.entPg=Math.min(pages,S.entPg+1); renderEnt(); });
+  });
 }
 
 // ── FINANCEIRO ────────────────────────────────────────────────────────────
 function renderFin() {
-  const q=S.finQ.toLowerCase();
-  const rows=S.financeiro.filter(f=>!q||f.razao_social.toLowerCase().includes(q));
-  const pages=Math.max(1,Math.ceil(rows.length/PER));
-  const pg=Math.min(S.finPg,pages);
-  const sl=rows.slice((pg-1)*PER,pg*PER);
-  const ref=S.competencias.find(c=>c.id===S.compAtiva)?.referencia||"–";
-  const vPago=S.financeiro.filter(f=>f.status==="pago").reduce((s,f)=>s++(f.valor||0),0);
-  const vPend=S.financeiro.filter(f=>f.status==="pendente").reduce((s,f)=>s++(f.valor||0),0);
-  const vTot=S.financeiro.reduce((s,f)=>s++(f.valor||0),0);
-
-  set(`
-    <div class="kpi-grid kpi-3" style="margin-bottom:14px">
-      <div class="kpi-card kpi-blue"><div class="kpi-lbl">💰 Total · ${ref}</div><div class="kpi-val" style="font-size:22px">${R(vTot)}</div><div class="kpi-foot">${S.financeiro.length} clientes</div></div>
-      <div class="kpi-card kpi-green"><div class="kpi-lbl">✅ Pagos</div><div class="kpi-val" style="font-size:22px">${R(vPago)}</div><div class="kpi-foot">${S.financeiro.filter(f=>f.status==="pago").length} clientes</div></div>
-      <div class="kpi-card kpi-amber"><div class="kpi-lbl">⏳ Pendentes</div><div class="kpi-val" style="font-size:22px">${R(vPend)}</div><div class="kpi-foot">${S.financeiro.filter(f=>f.status==="pendente").length} clientes</div></div>
-    </div>
-    <div class="table-card">
-      <div class="table-hdr">
-        <span class="card-title">💳 Honorários · ${ref} <span style="font-weight:400;color:var(--cinza);font-size:12px">${rows.length} clientes</span></span>
-        <div class="search-box">🔍 <input placeholder="Buscar cliente…" value="${escAttr(S.finQ)}" oninput="S.finQ=this.value;S.finPg=1;renderFin()"></div>
-      </div>
-      <div style="overflow-x:auto">
-      <table><thead><tr><th>Cliente</th><th>Valor</th><th>Status</th><th>Data Pag.</th><th>Observação</th><th></th></tr></thead>
-      <tbody>${sl.length?sl.map(f=>`<tr>
-        <td style="font-weight:600">${f.razao_social}</td>
-        <td style="font-family:'DM Mono',monospace;font-weight:700">${R(f.valor)}</td>
-        <td><span class="sbadge sf-${f.status}">${lbF(f.status)}</span></td>
-        <td style="font-family:'DM Mono',monospace;font-size:12px">${f.data_pagamento?D(f.data_pagamento):"–"}</td>
-        <td style="font-size:12px;color:var(--cinza);max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${f.observacao||"–"}</td>
-        <td><button class="btn-edit" onclick='openFin(${JSON.stringify(f)})'>✏️</button></td>
-      </tr>`).join(""):`<tr><td colspan="6"><div class="empty">Nenhum registro encontrado</div></td></tr>`}</tbody>
-      </table></div>
-      ${pagerHtml(pg,pages,"S.finPg","renderFin",rows.length,sl.length)}
-    </div>`);
-}
-
-function pagerHtml(pg,pages,pgVar,renderFn,total,showing) {
-  const nums=Array.from({length:pages},(_,i)=>i+1).filter(p=>p===1||p===pages||Math.abs(p-pg)<=1);
-  let btns="";
-  nums.forEach((p,i)=>{
-    if(i>0&&p-nums[i-1]>1) btns+=`<span style="padding:0 3px;color:var(--cinza)">…</span>`;
-    btns+=`<button class="pager-btn${p===pg?" active":""}" onclick="${pgVar}=${p};${renderFn}()">${p}</button>`;
+  var q = S.finQ.toLowerCase();
+  var rows = S.financeiro.filter(function(f){
+    return !q || f.razao_social.toLowerCase().indexOf(q)>=0;
   });
-  return `<div class="pager">
-    <span>Exibindo ${showing} de ${total}</span>
-    <div class="pager-btns">
-      <button class="pager-btn" onclick="${pgVar}=Math.max(1,${pgVar}-1);${renderFn}()" ${pg<=1?"disabled":""}>←</button>
-      ${btns}
-      <button class="pager-btn" onclick="${pgVar}=Math.min(${pages},${pgVar}+1);${renderFn}()" ${pg>=pages?"disabled":""}>→</button>
-    </div>
-  </div>`;
+  var pages = Math.max(1, Math.ceil(rows.length/PER));
+  var pg    = Math.min(S.finPg, pages);
+  var sl    = rows.slice((pg-1)*PER, pg*PER);
+  var ref   = ""; S.competencias.forEach(function(c){if(c.id===S.compAtiva)ref=c.referencia;});
+  var vPago=0, vPend=0, vTot=0, cPago=0, cPend=0;
+  S.financeiro.forEach(function(f){
+    vTot += Number(f.valor||0);
+    if(f.status==="pago")     { vPago+=Number(f.valor||0); cPago++; }
+    if(f.status==="pendente") { vPend+=Number(f.valor||0); cPend++; }
+  });
+
+  var trs = sl.map(function(f){
+    return '<tr>'+
+      '<td style="font-weight:600">'+esc(f.razao_social)+'</td>'+
+      '<td style="font-family:\'DM Mono\',monospace;font-weight:700">'+R(f.valor)+'</td>'+
+      '<td><span class="sbadge sf-'+f.status+'">'+lbF(f.status)+'</span></td>'+
+      '<td style="font-family:\'DM Mono\',monospace;font-size:12px">'+(f.data_pagamento?D(f.data_pagamento):"–")+'</td>'+
+      '<td style="font-size:12px;color:var(--cinza);max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+esc(f.observacao||"–")+'</td>'+
+      '<td><button class="btn-edit" data-id="'+f.id+'">✏️</button></td>'+
+    '</tr>';
+  }).join("") || '<tr><td colspan="6"><div class="empty">Nenhum registro encontrado</div></td></tr>';
+
+  set(
+    '<div class="kpi-grid kpi-3" style="margin-bottom:14px">'+
+      '<div class="kpi-card kpi-blue"><div class="kpi-lbl">💰 Total · '+esc(ref)+'</div><div class="kpi-val" style="font-size:22px">'+R(vTot)+'</div><div class="kpi-foot">'+S.financeiro.length+' clientes</div></div>'+
+      '<div class="kpi-card kpi-green"><div class="kpi-lbl">✅ Pagos</div><div class="kpi-val" style="font-size:22px">'+R(vPago)+'</div><div class="kpi-foot">'+cPago+' clientes</div></div>'+
+      '<div class="kpi-card kpi-amber"><div class="kpi-lbl">⏳ Pendentes</div><div class="kpi-val" style="font-size:22px">'+R(vPend)+'</div><div class="kpi-foot">'+cPend+' clientes</div></div>'+
+    '</div>'+
+    '<div class="table-card">'+
+      '<div class="table-hdr">'+
+        '<span class="card-title">💳 Honorários · '+esc(ref)+' <span style="font-weight:400;color:var(--cinza);font-size:12px">'+rows.length+' clientes</span></span>'+
+        '<div class="search-box">🔍 <input id="finSearch" placeholder="Buscar cliente…" value="'+esc(S.finQ)+'"></div>'+
+      '</div>'+
+      '<div style="overflow-x:auto">'+
+      '<table><thead><tr><th>Cliente</th><th>Valor</th><th>Status</th><th>Data Pag.</th><th>Observação</th><th></th></tr></thead>'+
+      '<tbody>'+trs+'</tbody></table></div>'+
+      pagerHtml(pg,pages,rows.length,sl.length,"fin")+
+    '</div>'
+  );
+
+  document.getElementById("finSearch").addEventListener("input", function(){
+    S.finQ = this.value; S.finPg = 1; renderFin();
+  });
+  document.querySelectorAll("#mainContent .btn-edit[data-id]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var id = this.dataset.id;
+      var f = S.financeiro.find(function(x){ return x.id===id; });
+      if (f) openFin(f);
+    });
+  });
+  document.querySelectorAll(".pg-btn-fin").forEach(function(b){
+    b.addEventListener("click", function(){ S.finPg=Number(this.dataset.pg); renderFin(); });
+  });
+  document.querySelectorAll(".pg-prev-fin").forEach(function(b){
+    b.addEventListener("click", function(){ S.finPg=Math.max(1,S.finPg-1); renderFin(); });
+  });
+  document.querySelectorAll(".pg-next-fin").forEach(function(b){
+    b.addEventListener("click", function(){ S.finPg=Math.min(pages,S.finPg+1); renderFin(); });
+  });
 }
 
-// ── MODAIS ────────────────────────────────────────────────────────────────
+// ── Paginação ─────────────────────────────────────────────────────────────
+function pagerHtml(pg, pages, total, showing, key) {
+  var nums = [];
+  for(var i=1;i<=pages;i++){
+    if(i===1||i===pages||Math.abs(i-pg)<=1) nums.push(i);
+  }
+  var btns = '<button class="pager-btn pg-prev-'+key+'"'+(pg<=1?' disabled':'')+'>←</button>';
+  var prev = -1;
+  nums.forEach(function(p){
+    if(prev>0 && p-prev>1) btns+='<span style="padding:0 4px;color:var(--cinza)">…</span>';
+    btns+='<button class="pager-btn pg-btn-'+key+(p===pg?' active':'')+'\" data-pg="'+p+'">'+p+'</button>';
+    prev=p;
+  });
+  btns+='<button class="pager-btn pg-next-'+key+'"'+(pg>=pages?' disabled':'')+'>→</button>';
+  return '<div class="pager"><span>Exibindo '+showing+' de '+total+'</span><div class="pager-btns">'+btns+'</div></div>';
+}
+
+// ── Modais ────────────────────────────────────────────────────────────────
 function openEnt(e) {
-  document.getElementById("mEntId").value=e.id;
-  document.getElementById("mEntSub").textContent=`${e.razao_social} · ${e.obrigacao_codigo} – ${e.obrigacao_nome}`;
-  document.getElementById("mEntStatus").value=e.status||"pendente";
-  document.getElementById("mEntData").value=e.data_entrega?e.data_entrega.substring(0,10):"";
-  document.getElementById("mEntValor").value=e.valor||"";
-  document.getElementById("mEntObs").value=e.observacao||"";
+  S.editEntId = e.id;
+  document.getElementById("mEntSub").textContent = e.razao_social+" · "+e.obrigacao_codigo+" – "+e.obrigacao_nome;
+  document.getElementById("mEntStatus").value = e.status || "pendente";
+  document.getElementById("mEntData").value   = e.data_entrega ? e.data_entrega.substring(0,10) : "";
+  document.getElementById("mEntValor").value  = e.valor || "";
+  document.getElementById("mEntObs").value    = e.observacao || "";
   document.getElementById("modalEntrega").classList.remove("hidden");
 }
+
 function openFin(f) {
-  document.getElementById("mFinId").value=f.id;
-  document.getElementById("mFinSub").textContent=`${f.razao_social} · ${S.competencias.find(c=>c.id===S.compAtiva)?.referencia||""}`;
-  document.getElementById("mFinStatus").value=f.status||"pendente";
-  document.getElementById("mFinValor").value=f.valor||"";
-  document.getElementById("mFinData").value=f.data_pagamento||"";
-  document.getElementById("mFinObs").value=f.observacao||"";
+  S.editFinId = f.id;
+  var ref=""; S.competencias.forEach(function(c){if(c.id===S.compAtiva)ref=c.referencia;});
+  document.getElementById("mFinSub").textContent   = f.razao_social+" · "+ref;
+  document.getElementById("mFinStatus").value      = f.status || "pendente";
+  document.getElementById("mFinValor").value       = f.valor || "";
+  document.getElementById("mFinData").value        = f.data_pagamento || "";
+  document.getElementById("mFinObs").value         = f.observacao || "";
   document.getElementById("modalFin").classList.remove("hidden");
 }
-function closeModal(id){document.getElementById(id).classList.add("hidden")}
+
+function closeModal(id) { document.getElementById(id).classList.add("hidden"); }
 
 async function salvarEntrega() {
-  const id=document.getElementById("mEntId").value;
   try {
-    await PATCH("entregas_obrigacoes",id,{
-      status:document.getElementById("mEntStatus").value,
-      data_entrega:document.getElementById("mEntData").value||null,
-      valor:document.getElementById("mEntValor").value?parseFloat(document.getElementById("mEntValor").value):null,
-      observacao:document.getElementById("mEntObs").value||null,
-      updated_at:new Date().toISOString()
+    await PATCH("entregas_obrigacoes", S.editEntId, {
+      status:       document.getElementById("mEntStatus").value,
+      data_entrega: document.getElementById("mEntData").value  || null,
+      valor:        document.getElementById("mEntValor").value ? parseFloat(document.getElementById("mEntValor").value) : null,
+      observacao:   document.getElementById("mEntObs").value   || null,
+      updated_at:   new Date().toISOString()
     });
-    closeModal("modalEntrega"); toast("✅ Entrega atualizada!","ok"); await load();
-  } catch(e){toast("❌ "+e.message,"err");}
+    closeModal("modalEntrega");
+    toast("✅ Entrega atualizada!", "ok");
+    await load();
+  } catch(e) { toast("❌ "+e.message, "err"); }
 }
+
 async function salvarFin() {
-  const id=document.getElementById("mFinId").value;
   try {
-    await PATCH("financeiro_honorarios",id,{
-      status:document.getElementById("mFinStatus").value,
-      valor:document.getElementById("mFinValor").value?parseFloat(document.getElementById("mFinValor").value):null,
-      data_pagamento:document.getElementById("mFinData").value||null,
-      observacao:document.getElementById("mFinObs").value||null,
-      updated_at:new Date().toISOString()
+    await PATCH("financeiro_honorarios", S.editFinId, {
+      status:         document.getElementById("mFinStatus").value,
+      valor:          document.getElementById("mFinValor").value ? parseFloat(document.getElementById("mFinValor").value) : null,
+      data_pagamento: document.getElementById("mFinData").value  || null,
+      observacao:     document.getElementById("mFinObs").value   || null,
+      updated_at:     new Date().toISOString()
     });
-    closeModal("modalFin"); toast("✅ Honorário atualizado!","ok"); await load();
-  } catch(e){toast("❌ "+e.message,"err");}
+    closeModal("modalFin");
+    toast("✅ Honorário atualizado!", "ok");
+    await load();
+  } catch(e) { toast("❌ "+e.message, "err"); }
 }
 
-// Fechar ao clicar fora
-["modalEntrega","modalFin"].forEach(id=>
-  document.getElementById(id).addEventListener("click",e=>{if(e.target===e.currentTarget)closeModal(id)})
-);
-
-// ── HELPERS ───────────────────────────────────────────────────────────────
-const set=html=>document.getElementById("mainContent").innerHTML=html;
-const fmt=n=>Number(n||0).toLocaleString("pt-BR");
-const R=n=>Number(n||0).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-const D=d=>{ try{ return new Date(d.length===10?d+"T12:00:00":d).toLocaleDateString("pt-BR"); }catch(e){return d;} };
-const escAttr=s=>(s||"").replace(/"/g,"&quot;");
-function rtB(rt){
-  const m={SN:["badge-sn","SN"],LP:["badge-lp","LP"],LR:["badge-lr","LR"],MEI:["badge-mei","MEI"],DM:["badge-dm","DM"],EV:["badge-ev","EV"]};
-  const[cls,lbl]=m[rt]||["badge-ev",rt||"–"];
-  return`<span class="badge ${cls}">${lbl}</span>`;
-}
-const lbS=s=>({pendente:"Pendente",entregue:"Entregue",sem_movimento:"Sem Mov.",vencida:"Vencida",dispensada:"Dispensada",nao_aplicavel:"N/A",vencendo_hoje:"Vencendo hoje"}[s]||s);
-const lbF=s=>({pendente:"Pendente",pago:"Pago",cancelado:"Cancelado"}[s]||s);
-function destroyCharts(){Object.values(S.charts).forEach(c=>{try{c.destroy()}catch(e){}});S.charts={};}
-function showLoading(){set(`<div class="loading"><div class="spinner"></div><div>Carregando…</div></div>`);}
-function showErr(msg){set(`<div class="err-box"><strong>⚠️ Erro:</strong> ${msg}</div>`);}
-function toast(msg,type="ok"){
-  const w=document.getElementById("toastWrap");
-  const t=document.createElement("div");
-  t.className=`toast ${type}`;t.textContent=msg;
-  w.appendChild(t);setTimeout(()=>t.remove(),3200);
-}
-
+// ── Start ─────────────────────────────────────────────────────────────────
 init();
 </script>
 </body>
